@@ -76,3 +76,27 @@ function login() {
 function logout() {
   window.location.href = `/.auth/logout`;
 }
+
+async function main() {
+  // Check if user is logged in
+  const user = await getUser();
+
+  if (user) {
+    // Load user settings
+    await getUserSettings();
+
+    document.getElementById('app').hidden = false;
+    document.getElementById('user').innerHTML = user.userDetails;
+  } else {
+    document.getElementById('login').hidden = false;
+  }
+
+  // Setup event handlers
+  document.getElementById('loginButton').addEventListener('click', login);
+  document.getElementById('logoutButton').addEventListener('click', logout);
+  document.getElementById('saveButton').addEventListener('click', saveUserSettings);
+  document.getElementById('rollButton').addEventListener('click', rollDices);
+  document.getElementById('historyButton').addEventListener('click', getRollHistory);
+}
+
+main();
