@@ -35,12 +35,12 @@ content-type: application/json
 POST {{dice_api_host}}/rolls
 content-type: application/json
 
-{ "sides": 6 }
+{ "sides": 5 }
 
 ###
 
 # Get roll history
-GET {{dice_api_host}}/rolls/history?max=8&sides=6
+GET {{dice_api_host}}/rolls/history?max=50&sides=5
 
 ##################################################################
 # Gateway API
