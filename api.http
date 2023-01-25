@@ -71,5 +71,5 @@ x-ms-client-principal: {{client_principal}}
 ###
 
 # Get roll history
-GET {{gateway_host}}/api/rolls/history?max=10
+GET {{gateway_host}}/api/rolls/history?max=18
 x-ms-client-principal: {{client_principal}}
