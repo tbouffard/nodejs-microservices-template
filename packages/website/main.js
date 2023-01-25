@@ -57,3 +57,22 @@ async function getRollHistory() {
     resultDiv.innerHTML = `Cannot get roll history: ${message}`;
   }
 }
+
+async function getUser() {
+  try {
+    const response = await fetch(`/.auth/me`);
+    if (response.ok) {
+      const json = await response.json();
+      return json.clientPrincipal;
+    }
+  } catch {}
+  return undefined;
+}
+
+function login() {
+  window.location.href = `/.auth/login/github`;
+}
+
+function logout() {
+  window.location.href = `/.auth/logout`;
+}
